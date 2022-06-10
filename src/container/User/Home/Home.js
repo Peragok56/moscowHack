@@ -15,14 +15,14 @@ class Home extends Component{
             <div className={classes.main}>
                 <div className={classes.info}>
                     <h1>Добро пожаловать!</h1>
-                    <h2>Рады вас видеть</h2>
+                    <h2>Рады вас видеть :)</h2>
                     {localStorage.getItem('token') === null ? 
                         <Link
                             to={{
                                 pathname: '/auth'
                             }}
                         > 
-                            Авторизация
+                            Начать делать добро
                         </Link>
                     : <Link
                         to={{
@@ -32,6 +32,7 @@ class Home extends Component{
                         Начать
                       </Link>}
                 </div>
+                <div className={classes.Vector}></div>
             </div>
         )
     }

@@ -1,7 +1,9 @@
 .main{
     width: 100%;
     height: 100vh;
-    background: #FFFFFF;
+    background: url("welcome.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,14 +23,14 @@
   
   .info > h1{
     width: 100%;
-    color: #336BD8;
+    color: #002279;
     font-size: 96px;
     margin-bottom: 46px;
   }
 
   .info > h2{
     width: 100%;
-    color: #909090;
+    color: #336BD8;
     font-size: 24px;
     margin-bottom: 63px;
   }
@@ -36,18 +38,21 @@
   .info > a{
     border: none;
     outline: none;
-    color: #FFFFFF;
+    color: #000000;
     font-weight: 500;
     font-size: 24px;
     text-decoration: none;
-    padding: 20px 71px;
-    background-color: #000000;
+    padding: 20px 60px;
+    background-color: #71C0EC;
+    background: #71C0EC;
+    box-shadow: 0px 4px 39px 4px #71C0EC;
     border-radius: 10px;
     transition: ease-in-out 0.3s;
   }
 
   .info > a:hover{
     opacity: 0.8;
+    transform: scale(1.05);
   }
 
   @keyframes slideInfo {
@@ -58,6 +63,24 @@
     100%{
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  .Vector{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 105px;
+    width: 100%;
+    background: url('Vector.svg');
+    background-size: 2000px 150px;
+    animation: slide 4s linear infinite;
+  }
+  @keyframes slide {
+    0% {
+      background-position-x: 0px;
+    }
+    100% {
+      background-position-x: 2000px;
     }
   }
 
