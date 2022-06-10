@@ -1,0 +1,35 @@
+.Header{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.104);
+}
+
+.Login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.Login > button{
+    padding: 8px;
+    background: #336BD8;
+    border-radius: 12px;
+    border: none;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+    height: 40px;
+}
+
+.Login > button:hover{
+    opacity: 0.7;
+}
+
+.Login > button > img{
+    max-width: 25px;
+}

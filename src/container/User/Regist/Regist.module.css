@@ -1,0 +1,134 @@
+.Auth{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8CCBE6;
+    z-index: 10000;
+}
+
+.Card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    height: 100%;
+    background: url('Buble.svg') no-repeat;
+    background-size: 100%;
+    animation: rotate 5s infinite ease-in-out 1s;
+}
+
+@keyframes rotate{
+    0%{
+        background-position: 25% 25%;
+    }
+    25%{
+        background-position: 15% 0%;
+    }
+    50%{
+        background-position: 0% 15%;
+    }
+    100%{
+        background-position: 25% 25%;
+    }
+}
+
+.authForm{
+    border-radius: 8px;
+    padding: 23px 43px;
+    width: 40%;
+    height: 100%;
+    background-color: #2085BD;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.authForm  h1{
+    width: 100%;
+    font-size: 32px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 28px;
+}
+
+.authForm h2{
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.authForm > form{
+    width: 100%;
+}
+
+.authForm > form > input {
+    font-size: 16px;
+    background-color: #D0EEFF;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 16px 14px;
+    border-radius: 6px;
+    color: #909090;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.authForm > form > input::placeholder{
+    color: #909090;
+}
+
+.authForm > form > button{
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    background-color: #71C0EC;
+    color: #FFFFFF;
+    padding: 16px 0px;
+    font-weight: 500;
+    font-size: 24px;
+    background: #71C0EC;
+    box-shadow: 0px 4px 39px 4px #71C0EC;
+    border-radius: 10px;
+    transition: ease-in-out 0.3s;
+    margin-top: 75px;
+}
+
+.authForm > form > button:hover{
+    opacity: 0.8;
+}
+
+.authForm > span{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #909090;
+}
+
+.authForm > span > a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #336BD8;
+    font-weight: 500;
+}
+
+@keyframes authSlide {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media(max-width: 720px){
+    .Auth{
+        background-color: #F3F3F3;
+    }
+}
