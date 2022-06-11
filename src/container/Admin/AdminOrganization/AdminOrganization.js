@@ -13,7 +13,7 @@ class AdminOrganization extends Component{
     }
 
     componentDidMount(){
-        axios.get('/organization/getList', {headers: {Authorization: localStorage.getItem('token')}})
+        axios.get('/organization/getListNoVerify', {headers: {Authorization: localStorage.getItem('token')}})
             .then((res) => {
                 console.log(res);
                 this.setState({organization: res.data.organization})

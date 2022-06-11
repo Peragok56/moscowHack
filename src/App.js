@@ -13,10 +13,12 @@ import Main from './container/User/Main/Main';
 import Search from './container/User/Search/Search'
 import Help from './container/User/Help/Help'
 import FindTask from './container/User/FindTask/FindTask'
+import Organization from './container/User/Organizate/Organizate';
 
 import AdminPanel from './container/Admin/AdminPanel/AdminPanel';
 import AdminSpecification from './container/Admin/AdminSpecification/AdminSpecification';
 import AdminOrganization from "./container/Admin/AdminOrganization/AdminOrganization";
+import Organizations from './container/User/Organizations/Organizations';
 
 class App extends Component{
 
@@ -52,6 +54,8 @@ class App extends Component{
         case 'user':
           return (
             <Switch>
+              <Route path='/organizations' exact component={Organizations}/>
+              <Route path='/organization' exact component={Organization}/>
               <Route path='/help' exact component={Help}/>
               <Route path='/findtask' exact component={FindTask}/>
               <Route path='/search' exact component={Search}/>

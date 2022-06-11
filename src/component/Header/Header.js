@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import avatar from './avatar.svg'
 import Exit from './exit.svg'
 
+import king from './king.svg'
 import heart from './heart.svg'
 import home from './home.svg'
 import organization from './organization.svg'
@@ -33,8 +34,9 @@ class Header extends Component{
                     <Link to={{pathname: '/main'}} className={classes.Link}><span><img src={home}/></span> <p>Главная</p></Link>
                     <Link to={{pathname: '/findtask'}} className={classes.Link}><span><img src={search}/></span> <p>Найти задание</p></Link>
                     <Link to={{pathname: '/help'}} className={classes.Link}><span><img src={heart}/></span> <p>Волонтёры</p></Link>
-                    <Link className={classes.Link}><span><img src={organization}/></span> <p>Организаторы</p></Link>
+                    <Link className={classes.Link} to={{pathname: '/organizations'}}><span><img src={organization}/></span> <p>Организаторы</p></Link>
                     <Link className={classes.Link}><span><img src={project}/></span> <p>Проекты</p></Link>
+                    <Link className={classes.Link} to={{pathname: '/organization'}}><span><img src={king}/></span> <p>Стать организатором</p></Link>
                 </div>
             </div>
         )

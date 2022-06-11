@@ -21,6 +21,7 @@ export function auth(e, login, password) {
              switch(res2.data.account.role.name){
                 case 'user':
                   window.location.pathname = '/main'
+                  break
                 case 'root':
                   return(
                     window.location.pathname = '/adminPanel'

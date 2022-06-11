@@ -3,8 +3,7 @@
     min-height: 100vh;
     height: 100%;
     display: flex;
-    justify-content: center;
-    gap: 25px;
+    gap: 45px;
 }
 
 .profileContainer{

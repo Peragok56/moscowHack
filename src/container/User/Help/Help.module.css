@@ -3,7 +3,7 @@
     min-height: 100vh;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 25px;
 }
 
