@@ -12,6 +12,7 @@ class AdminPanel extends Component{
                 <div className={classes.LinkList}>
                     <Link to={{pathname: '/adminSpecification'}}>Настройка спецификаций</Link>
                     <Link>Модерация пользователей</Link>
+                    <Link to={{pathname: '/adminOrganization'}}>Список организаций</Link>
                 </div>
             </div>
             <div className={classes.Vector}></div>

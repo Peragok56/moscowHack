@@ -16,6 +16,7 @@ import FindTask from './container/User/FindTask/FindTask'
 
 import AdminPanel from './container/Admin/AdminPanel/AdminPanel';
 import AdminSpecification from './container/Admin/AdminSpecification/AdminSpecification';
+import AdminOrganization from "./container/Admin/AdminOrganization/AdminOrganization";
 
 class App extends Component{
 
@@ -45,6 +46,7 @@ class App extends Component{
             <Switch>
                 <Route path='/adminSpecification' exact component={AdminSpecification}/>
                 <Route path='/adminPanel' exact component={AdminPanel}/>
+                <Route path='/adminOrganization' exact component={AdminOrganization}/>
             </Switch>
           );
         case 'user':
