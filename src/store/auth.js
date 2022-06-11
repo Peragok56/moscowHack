@@ -18,7 +18,16 @@ export function auth(e, login, password) {
              localStorage.setItem('role', res2.data.account.role.name)
              localStorage.setItem('firstName', res2.data.account.firstName)
              localStorage.setItem('lastName', res2.data.account.lastName)
-             window.location.pathname = '/Profile'
+             switch(res2.data.account.role.name){
+                case 'user':
+                  window.location.pathname = '/main'
+                case 'root':
+                  return(
+                    window.location.pathname = '/adminPanel'
+                  )
+                  default: 
+                  break
+              }
          })
          .catch((err3) => {
              console.log(err3);

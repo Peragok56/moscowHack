@@ -14,6 +14,9 @@ import Search from './container/User/Search/Search'
 import Help from './container/User/Help/Help'
 import FindTask from './container/User/FindTask/FindTask'
 
+import AdminPanel from './container/Admin/AdminPanel/AdminPanel';
+import AdminSpecification from './container/Admin/AdminSpecification/AdminSpecification';
+
 class App extends Component{
 
   componentDidMount(){
@@ -37,11 +40,18 @@ class App extends Component{
     function router(role) {
       console.log(role);
       switch(role){
+        case 'root':
+          return (
+            <Switch>
+                <Route path='/adminSpecification' exact component={AdminSpecification}/>
+                <Route path='/adminPanel' exact component={AdminPanel}/>
+            </Switch>
+          );
         case 'user':
           return (
             <Switch>
-                <Route path='/help' exact component={Help}/>
-                <Route path='/findtask' exact component={FindTask}/>
+              <Route path='/help' exact component={Help}/>
+              <Route path='/findtask' exact component={FindTask}/>
               <Route path='/search' exact component={Search}/>
               <Route path='/main' exact component={Main}/>
               <Route path='/profile' exact component={Profile}/>
