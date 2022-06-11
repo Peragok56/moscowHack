@@ -15,6 +15,9 @@ class Profile extends Component{
             id: '',
             roleName: '',
             email: '',
+            dateBorn: '',
+            isLoad: false,
+            phoneNumber: '',
         }
     }
 
@@ -22,10 +25,11 @@ class Profile extends Component{
         axios.get(`account/getInfoById?accountId=${localStorage.getItem('accountId')}`, {headers: {Authorization: localStorage.getItem('token')}})
         .then((res) => {
             console.log(res)
-            this.setState({info: res.data.account})
             this.setState({firstName: res.data.account.firstName})
             this.setState({lastName: res.data.account.lastName})
             this.setState({email: res.data.account.email})
+            this.setState({dateBorn: res.data.account.dateBorn})
+
         })
         .catch((err) => console.log(err))
     }
@@ -33,7 +37,23 @@ class Profile extends Component{
     render(){
 
         let edit = () => {
-            
+            axios.patch('/account/edit', {firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, dateBorn: this.state.dateBorn, phone: this.state.phoneNumber}, {headers: {Authorization: localStorage.getItem('token')}})
+            .then((res) => {
+                console.log(res);
+                axios.get(`account/getInfoById?accountId=${localStorage.getItem('accountId')}`, {headers: {Authorization: localStorage.getItem('token')}})
+                .then((res) => {
+                    console.log(res)
+                    this.setState({firstName: res.data.account.firstName})
+                    this.setState({lastName: res.data.account.lastName})
+                    this.setState({email: res.data.account.email})
+                    this.setState({dateBorn: res.data.account.dateBorn})
+
+                })
+                .catch((err) => console.log(err))
+            })
+            .catch((err) => {
+                console.log(err);
+            })
         }
 
         return(
@@ -64,19 +84,17 @@ class Profile extends Component{
                             />
 
 
-                            <h1>Район</h1>
-                            <input />
+                            <h1>Дата рождения</h1>
+                            <input value={this.state.dateBorn} type="date"
+                            onChange={(e) => this.setState({dateBorn: e.target.value})}/>
 
-                            <h1>Личная информация</h1>
-                            <textarea />
+                            <h1>Номер телефона</h1>
+                            <input value={this.state.phoneNumber}
+                            onChange={(e) => this.setState({phoneNumber: e.target.value})}/>
 
-                            <h1>Направления</h1>
-                            
-
-                            <h1>Телефон</h1>
-                            <input />
+                            <button className={classes.Save} onClick={edit}>Сохранить</button>
                         </div>
-
+                        
                         
                     </div>
                 </div>

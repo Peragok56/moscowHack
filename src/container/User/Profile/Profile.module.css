@@ -40,7 +40,7 @@
     align-items: flex-start;
     padding: 32px;
     width: 95%;
-    min-height: 500px;
+    min-height: 100vh;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     background-color: #2085BD;
@@ -64,6 +64,15 @@
     border-radius: 15px;
     background-color: #D0EEFF;
     margin-bottom: 15px;
+}
+
+.Save{
+    background: #71C0EC;
+    box-shadow: 0px 4px 39px 4px #71C0EC;
+    border-radius: 10px;
+    border: none;
+    padding: 16px 32px;
+    color: white;
 }
 
 .infoInp > textarea {
