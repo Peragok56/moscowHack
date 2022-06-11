@@ -12,10 +12,11 @@ export function auth(e, login, password) {
          .then((res2) => {
              console.log(res2);
              console.log(res2.data);
+             localStorage.setItem('accountId', res2.data.account._id)
              localStorage.setItem('role', res2.data.account.role.name)
              localStorage.setItem('firstName', res2.data.account.firstName)
              localStorage.setItem('lastName', res2.data.account.lastName)
-             window.location.pathname = '/mainTask'
+             window.location.pathname = '/Profile'
          })
          .catch((err3) => {
              console.log(err3);
