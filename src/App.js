@@ -8,6 +8,8 @@ import axios from './axios/axios';
 import Auth from './container/User/Auth/Auth';
 import Regist from './container/User/Regist/Regist';
 import Home from './container/User/Home/Home';
+import Profile from './container/User/Profile/Profile';
+import Main from './container/User/Main/Main';
 
 class App extends Component{
 
@@ -35,6 +37,8 @@ class App extends Component{
         case 'user':
           return (
             <Switch>
+              <Route path='/main' exact component={Main}/>
+              <Route path='/profile' exact component={Profile}/>
               <Route path='/' exact component={Home}/>
             </Switch>
           );
