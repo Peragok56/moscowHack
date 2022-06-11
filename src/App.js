@@ -11,6 +11,8 @@ import Home from './container/User/Home/Home';
 import Profile from './container/User/Profile/Profile';
 import Main from './container/User/Main/Main';
 import Search from './container/User/Search/Search'
+import Help from './container/User/Help/Help'
+import FindTask from './container/User/FindTask/FindTask'
 
 class App extends Component{
 
@@ -38,10 +40,13 @@ class App extends Component{
         case 'user':
           return (
             <Switch>
+                <Route path='/help' exact component={Help}/>
+                <Route path='/findtask' exact component={FindTask}/>
               <Route path='/search' exact component={Search}/>
               <Route path='/main' exact component={Main}/>
               <Route path='/profile' exact component={Profile}/>
               <Route path='/' exact component={Home}/>
+
             </Switch>
           );
         case null:

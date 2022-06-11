@@ -5,6 +5,7 @@ import avatar from './avatar.svg'
 import Header from '../../../component/Header/Header'
 import axios from '../../../axios/axios'
 
+
 class Profile extends Component{
     constructor(props){
         super(props)
@@ -15,6 +16,7 @@ class Profile extends Component{
             id: '',
             roleName: '',
             email: '',
+            isLoaded: true,
         }
     }
 
@@ -26,9 +28,15 @@ class Profile extends Component{
             this.setState({firstName: res.data.account.firstName})
             this.setState({lastName: res.data.account.lastName})
             this.setState({email: res.data.account.email})
+            setTimeout(() => {
+                this.setState({isLoaded: false});
+                console.log("gotovo")
+            }, 1000)
+
         })
         .catch((err) => console.log(err))
     }
+
 
     render(){
 
@@ -42,9 +50,17 @@ class Profile extends Component{
                 <div className={classes.bubble}/>
                 <div className={classes.profileContainer}>
                     <h1>Редактирование профиля</h1>
+
                     <div className={classes.containerDown}>
                         <img src={avatar} style={{width: 200, marginBottom: 20}}/>
+
                         <div className={classes.infoInp}>
+                            {this.state.isLoaded ?
+                                <div className={classes.loader}>Loading...</div>:
+
+                            <React.Fragment>
+
+
                             <h1>Имя</h1>
                             <input 
                             value={this.state.firstName}
@@ -74,7 +90,7 @@ class Profile extends Component{
                             
 
                             <h1>Телефон</h1>
-                            <input />
+                            <input /> </React.Fragment>}
                         </div>
 
                         
