@@ -16,7 +16,7 @@ class Auth extends Component{
                         <p>Войдите в аккаунт и начните делать мир лучше! :)</p>
                         <form>
                             <input placeholder="Почта" type='email' id="login"/>
-                            <input placeholder="Пороль" type='password' id="password"/>
+                            <input placeholder="Пароль" type='password' id="password"/>
                             <button onClick={(e) => 
                             auth(e,
                                 document.getElementById('login').value,
