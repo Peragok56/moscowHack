@@ -25,8 +25,6 @@ class Profile extends Component{
             this.setState({info: res.data.account})
             this.setState({firstName: res.data.account.firstName})
             this.setState({lastName: res.data.account.lastName})
-            this.setState({id: res.data.role.id})
-            this.setState({roleName: res.data.role.name})
             this.setState({email: res.data.account.email})
         })
         .catch((err) => console.log(err))
@@ -41,6 +39,7 @@ class Profile extends Component{
         return(
             <div className={classes.App}>
                 <Header />
+                <div className={classes.bubble}/>
                 <div className={classes.profileContainer}>
                     <h1>Редактирование профиля</h1>
                     <div className={classes.containerDown}>
