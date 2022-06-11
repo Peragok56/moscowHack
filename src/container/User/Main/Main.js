@@ -3,12 +3,26 @@ import classes from './Main.module.css'
 import Header from '../../../component/Header/Header'
 
 import search from './search.svg'
+import direactive from "./direactives.svg"
+import rating from "./rating.svg"
+import star from './start.svg'
+import ListItem from "../../../component/ListItem/ListItem";
 
 class Main extends Component{
     constructor(props){
         super(props)
         this.state = {
-            article: []
+            recomendations: [
+                {title: "Помощь бездомным животным", adress: "Пр-кт Ленинский дом 56/2"},
+                {title: "Пункт приёма крови", adress: "Пр-кт Ленинский дом 56/2"},
+                {title: "Отбор волонтёров", adress: "Пр-кт Ленинский дом 56/2"},
+            ],
+            events : [
+                {title: "Помощь бездомным животным", adress: "Пр-кт Ленинский дом 56/2"},
+            ],
+            tasks: [
+                {title: "Помощь бездомным животным", adress: "Пр-кт Ленинский дом 56/2"},
+            ]
         }
     }
 
@@ -21,26 +35,93 @@ class Main extends Component{
                 <div className={classes.profileContainer}>
                     <h1>Главная</h1>
                     <div className={classes.containerDown}>
-                        <div className={classes.Block}>
-                            <div style={{display: 'flex'}}>
-                                <img src={search}/>
-                                <div style={{marginLeft: 15}}>
-                                    <h1>Найти задачу</h1>
-                                    <h2>По вашим тегам</h2>
+                        <div className={classes.col__blocks}>
+                            <div className={classes.Block}>
+                                <div style={{display: 'flex'}}>
+                                    <img src={search}/>
+                                    <div style={{marginLeft: 15}}>
+                                        <h1>Найти задачу</h1>
+                                        <h2>По вашим тегам</h2>
+                                    </div>
+                                </div>
+                                <div className={classes.ButtonList}>
+                                    <button>Животные</button>
+                                    <button>Здравоохронение</button>
+                                    <button>Здравоохронение</button>
+                                    <button>Другое</button>
                                 </div>
                             </div>
-                            <div className={classes.ButtonList}>
-                                <button>Животные</button>
-                                <button>Здравоохронение</button>
-                                <button>Здравоохронение</button>
-                                <button>Другое</button>
+                            <div className={classes.Block}>
+                                <div style={{display: 'flex'}}>
+                                    <img className={classes.block__img} src={direactive}/>
+                                    <div style={{marginLeft: 15}}>
+                                        <h1>Интересные проекты</h1>
+                                        <h2>По направлениям</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={classes.Block}>
+                                <div style={{display: 'flex'}}>
+                                    <img className={classes.block__img__rating} src={rating}/>
+                                    <div style={{marginLeft: 15}}>
+                                        <h1>Ваш рейтинг помощи</h1>
+                                        <h2>Ты молодец :)</h2>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className={classes.infoInp}>
-                            {this.state.article.length === 0 ?
-                                <h1>Статей нету</h1> : null
-                            }
+                        <div className={classes.col__blocks}>
+                            <div className={classes.infoInp}>
+                                {this.state.recomendations.length === 0
+                                    ?
+                                    <h1>Статей нету</h1>
+                                    :
+                                    <div>
+                                        <h2 className={classes.list__title}>Рекомендованные</h2>
+                                        {this.state.recomendations.map(post =>
+                                            <ListItem title={post.title} adress={post.adress}/>
+                                        )}
+                                        <button className={classes.show__more}>
+                                            Показать
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                            <div className={classes.infoInp}>
+                                {this.state.events.length === 0
+                                    ?
+                                    <h1>Статей нету</h1>
+                                    :
+                                    <div>
+                                        <h2 style={{marginTop: 20}} className={classes.list__title}>Мероприятия</h2>
+                                        {this.state.events.map(post =>
+                                            <ListItem title={post.title} adress={post.adress}/>
+                                        )}
+                                        <button className={classes.show__more}>
+                                            Показать
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                            <div className={classes.infoInp}>
+                                {this.state.tasks.length === 0
+                                    ?
+                                    <h1>Статей нету</h1>
+                                    :
+                                    <div>
+                                        <h2 style={{marginTop: 20}} className={classes.list__title}>Ваши задачи</h2>
+                                        {this.state.tasks.map(post =>
+                                            <ListItem title={post.title} adress={post.adress}/>
+                                        )}
+                                        <button className={classes.show__more}>
+                                            Показать
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -48,4 +129,4 @@ class Main extends Component{
     }
 }
 
-export default Main
+export default Main;

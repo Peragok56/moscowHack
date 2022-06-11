@@ -26,7 +26,7 @@ class Home extends Component{
                         </Link>
                     : <Link
                         to={{
-                            pathname: '/mainTask'
+                            pathname: '/profile'
                         }}
                         >
                         Начать
