@@ -2,9 +2,11 @@ import axios from "../axios/axios";
 
 export function auth(e, login, password) {
     e.preventDefault()
+    console.log(password)
      axios.post('/account/login', {email: login, password: password})
      .then((res) => {
          console.log(res);
+
          localStorage.setItem('token', res.data.token);
          localStorage.setItem('exp', res.data.expiresIn);
          console.log(res.data.token);

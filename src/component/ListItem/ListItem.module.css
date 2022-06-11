@@ -1,19 +1,48 @@
 .main {
-    background: url("item_back.png");
+    margin: 15px 20px;
+    background: url("preview.png");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    text-align: left;
 }
 
 .info {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #fff;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    margin-top: 100px;
+    padding-top: 10px;
+}
+
+.info__title {
+    font-size: 20px;
+    color: #000;
+}
+.info__adress {
+    padding: 10px;
+    font-size: 15px;
+    color: gray;
+}
+.info__adress:before{
+    content: url("place.png");
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.img {
+    width: 20px;
+    height: 20px;
 }
