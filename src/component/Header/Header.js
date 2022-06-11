@@ -2,6 +2,7 @@ import {Component} from 'react'
 import classes from './Header.module.css'
 import {Link} from 'react-router-dom'
 
+import avatar from './avatar.svg'
 import Exit from './exit.svg'
 
 class Header extends Component{
@@ -14,14 +15,19 @@ class Header extends Component{
 
         return(
             <div className={classes.Header}>
-                <Link style={{textDecoration: 'none'}} to='/mainTask'>
-                    <h1 style={{color: 'grey'}}>PROGRESS.<span style={{color: '#336BD8'}}>IO</span></h1>
-                </Link>
-                <div className={classes.Login}>
-                    <h1>{localStorage.getItem('name')}</h1>
-                    <button onClick={() => exit()}>
-                        <img src={Exit}/>
-                    </button>
+                <div className={classes.HeaderUp}>
+                    <Link style={{textDecoration: 'none'}} to='/profile'>
+                        <img src={avatar}/>
+                    </Link>
+                    <h1>{localStorage.getItem('firstName')} {localStorage.getItem('lastName')}</h1>
+                </div>
+            
+                <div className={classes.navLink}>
+                    <Link to='/main'>Главная</Link>
+                    <Link>Найти задание</Link>
+                    <Link>Волонтёры</Link>
+                    <Link>Организаторы</Link>
+                    <Link>Проекты</Link>
                 </div>
             </div>
         )
