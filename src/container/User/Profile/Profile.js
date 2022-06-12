@@ -105,11 +105,7 @@ class Profile extends Component{
                             onChange={(e) => this.setState({phoneNumber: e.target.value})}/>
 
                             <button className={classes.Save} onClick={edit}>Сохранить</button>
-                            <h1>Направления</h1>
-                            
-
-                            <h1>Телефон</h1>
-                            <input /> </React.Fragment>}
+                             </React.Fragment>}
 
                         </div>
                         

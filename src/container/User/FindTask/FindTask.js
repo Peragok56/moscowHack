@@ -39,6 +39,7 @@ class Main extends Component{
         return(
             <div className={classes.App}>
                 <Header />
+                <div className={classes.Buble}/>
                 <div className={classes.profileContainer}>
                     <h1>Найти задание</h1>
                     <div className={classes.containerDown}>

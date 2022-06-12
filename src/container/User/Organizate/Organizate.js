@@ -25,7 +25,7 @@ class Organization extends Component{
 
     render(){
 
-        let addSelect = (id) => {
+        let addSelect = (id, itm) => {
             let state = this.state.select
             let select = state.push(id)
             console.log(this.state.select);
