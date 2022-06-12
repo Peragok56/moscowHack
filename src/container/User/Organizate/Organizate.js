@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import classes from './Organizate.module.css'
 import { Link } from "react-router-dom";
 import axios from "../../../axios/axios";
+import Modal from "../../../component/Modal/Modal";
 
 
 class Organization extends Component{
@@ -9,7 +10,8 @@ class Organization extends Component{
         super(props)
         this.state = {
             specifications: [],
-            select: []
+            select: [],
+            modalVisible: false,
         }
     }
 
@@ -44,6 +46,15 @@ class Organization extends Component{
             })
         }
 
+        const showModal = () => {
+            this.setState({modalVisible: true});
+        }
+
+        const hide = (e) => {
+            e.preventDefault();
+            this.setState({modalVisible: false});
+        }
+
         return(
             <div className={classes.Auth}>
                 <div className={classes.Buble}>
@@ -57,11 +68,24 @@ class Organization extends Component{
                                 <option value={false}>Не комерческая</option>
                             </select>
                             <input placeholder="Введите адрес" type='text' id='address'/>
+                            <div>
+                            </div>
+
                             <div className={classes.SecList}>
-                                <h1>Направления: </h1>
-                                {this.state.specifications.map((item) => 
+                                <h1 onClick={showModal} style={{cursor: "pointer"}}>Добавить направление</h1>
+                                <Modal visible={this.state.modalVisible}>
+                                    <div className={classes.main__modal}>
+                                        {this.state.specifications.map((item) =>
+                                            <h3 className={classes.li_it} onClick={() => addSelect(item._id)}>{item.name}</h3>
+                                        )}
+                                    </div>
+                                    <button className={classes.ready} onClick={hide}>Готово</button>
+
+                                </Modal>
+                                {this.state.select.map((item) =>
                                     <h3 onClick={() => addSelect(item._id)}>{item.name}</h3>
                                 )}
+
                             </div>
                             <button onClick={create}>Стать организатором</button>
                         </form>
