@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import classes from './FindTask.module.css'
+import classes from './Volounteers.module.css'
 import Header from '../../../component/Header/Header'
-import preview from './help_preview.svg'
-import ListItem from "../../../component/ListItem/ListItem";
 import loup from './loup.svg'
+import PersonItem from "../../../component/PersonItem/PersonItem";
+
 
 class Main extends Component{
     constructor(props){
@@ -40,7 +40,7 @@ class Main extends Component{
             <div className={classes.App}>
                 <Header />
                 <div className={classes.profileContainer}>
-                    <h1>Найти задание</h1>
+                    <h1>Найти волонтеров</h1>
                     <div className={classes.containerDown}>
                         {this.state.isLoaded?
                             <div className={classes.loader}>Loading...</div>:
@@ -63,27 +63,18 @@ class Main extends Component{
                                         <option value="">По описанию</option>
                                     </select>
                                 </div>
-                                <div className={classes.first__line}>
-                                    <input className={classes.dropdown__menu}
-                                           type="text"
-                                           value={this.state.date}
-                                           onChange={e => this.state.setState({date: e.target.value})}
-                                    />
-                                    <input className={classes.dropdown__menu}
-                                           type="text"
-                                           value={this.state.adress}
-                                           onChange={e => this.state.setState({adress: e.target.value})}
-                                    />
-
-                                </div>
                                 <div >
 
 
                                 </div>
                                 <div className={classes.list__block}>
-                                    {
-                                        this.state.posts.map((item) => <ListItem onClick={openMore} title={item.title} adress={item.adress}/>)
-                                    }
+                                    <PersonItem/>
+                                    <PersonItem/>
+                                    <PersonItem/>
+                                    <PersonItem/>
+                                    <PersonItem/>
+                                    <PersonItem/>
+                                    <PersonItem/>
                                 </div>
                             </React.Fragment>
                         }

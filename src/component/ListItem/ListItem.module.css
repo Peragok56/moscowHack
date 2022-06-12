@@ -1,4 +1,5 @@
 .main {
+    text-align: center;
     margin: 15px 20px;
     background: url("preview.png");
     background-size: cover;
@@ -7,6 +8,12 @@
     overflow: hidden;
     display: flex;
     text-align: left;
+    width: 300px;
+    cursor: pointer;
+    transition: .3s;
+}
+.main:hover {
+    transform: scale(1.05);
 }
 
 .info {
@@ -30,7 +37,8 @@
     color: #000;
 }
 .info__adress {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 15px;
     color: gray;
 }

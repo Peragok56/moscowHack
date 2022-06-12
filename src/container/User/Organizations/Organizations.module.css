@@ -36,6 +36,7 @@
 .containerDown{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     padding: 32px;
@@ -162,4 +163,63 @@
     87.5% {
         box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
     }
+}
+
+.list__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.first__line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.search__field {
+    width: 80%;
+    outline: none;
+    border: none;
+    background-color: #D0EEFF;
+    border-radius: 40px;
+    padding: 12px 20px;
+    color: #2085BD;
+    padding-left: 50px;
+    font-size: 15px
+
+
+
+}
+.list__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.inp__container {
+    position: relative;
+    width: 100%;
+
+}
+
+.img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
 }

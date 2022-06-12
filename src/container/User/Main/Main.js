@@ -86,7 +86,7 @@ class Main extends Component{
                                             ?
                                             <h1>Статей нету</h1>
                                             :
-                                            <div>
+                                            <div className={classes.lists}>
                                                 <h2 className={classes.list__title}>Рекомендованные</h2>
                                                 {this.state.recomendations.map(post =>
                                                     <ListItem title={post.title} adress={post.adress}/>

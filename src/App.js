@@ -14,6 +14,7 @@ import Search from './container/User/Search/Search'
 import Help from './container/User/Help/Help'
 import FindTask from './container/User/FindTask/FindTask'
 import Organization from './container/User/Organizate/Organizate';
+import Volounteers from "./container/User/Volounteers/Volounteers";
 
 import AdminPanel from './container/Admin/AdminPanel/AdminPanel';
 import AdminSpecification from './container/Admin/AdminSpecification/AdminSpecification';
@@ -56,8 +57,10 @@ class App extends Component{
             <Switch>
               <Route path='/organizations' exact component={Organizations}/>
               <Route path='/organization' exact component={Organization}/>
-              <Route path='/help' exact component={Help}/>
+
               <Route path='/findtask' exact component={FindTask}/>
+                <Route path='/help' exact component={Help}/>
+                <Route path='/volounteers' exact component={Volounteers}/>
               <Route path='/search' exact component={Search}/>
               <Route path='/main' exact component={Main}/>
               <Route path='/profile' exact component={Profile}/>
