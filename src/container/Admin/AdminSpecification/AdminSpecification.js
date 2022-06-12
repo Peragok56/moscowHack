@@ -38,10 +38,12 @@ class AdminSpecification extends Component{
         }
 
         let addSpec = () => {
-            let title = document.getElementById('nameOrganization').innerText
+            let title = document.getElementById('nameSpec').value
+            console.log(title);
 
             axios.post('/specification/create', {name: title}, {headers: {Authorization: localStorage.getItem('token')}})
             .then((res) => {
+                document.getElementById('nameSpec').value = ''
                 console.log(res);
                 axios.get('/specification/getList', {headers: {Authorization: localStorage.getItem('token')}})
                 .then((res) => {
@@ -67,7 +69,7 @@ class AdminSpecification extends Component{
                                 <button onClick={() => removeSpec(item._id)}>Удалить</button>
                             </div>)
                              :
-                            <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+                            <div style={{width: '100%', display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
                         {this.state.specific.filter((val) => {
                                 if (this.state.search === "") {
                                     return ''

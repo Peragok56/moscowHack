@@ -23,7 +23,7 @@ class Organization extends Component{
 
     render(){
 
-        let addSelect = (id) => {
+        let addSelect = (id, itm) => {
             let state = this.state.select
             let select = state.push(id)
             console.log(this.state.select);
@@ -60,7 +60,7 @@ class Organization extends Component{
                             <div className={classes.SecList}>
                                 <h1>Направления: </h1>
                                 {this.state.specifications.map((item) => 
-                                    <h3 onClick={() => addSelect(item._id)}>{item.name}</h3>
+                                    <h3 onClick={() => addSelect(item._id, item)} className='nameItem'>{item.name}</h3>
                                 )}
                             </div>
                             <button onClick={create}>Стать организатором</button>

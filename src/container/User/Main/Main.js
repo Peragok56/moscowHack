@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import classes from './Main.module.css'
 import Header from '../../../component/Header/Header'
+import {Link} from 'react-router-dom'
 
 import search from './search.svg'
 import direactive from "./direactives.svg"
@@ -38,8 +39,12 @@ class Main extends Component{
         return(
             <div className={classes.App}>
                 <Header />
+                <div className={classes.Buble}/>
                 <div className={classes.profileContainer}>
-                    <h1>Главная</h1>
+                    <div className={classes.UpBlockWLink}>
+                        <h1>Главная</h1>
+                        <Link to={{pathname: '/addTask'}}>Добавить задачу</Link>
+                    </div>
                     <div className={classes.containerDown}>
                         {this.state.isLoaded?
                             <div className={classes.loader}>Loading...</div>
