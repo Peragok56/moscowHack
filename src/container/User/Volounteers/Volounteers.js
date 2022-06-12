@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import classes from './Volounteers.module.css'
 import Header from '../../../component/Header/Header'
 import loup from './loup.svg'
+import place from './place_ic.svg'
 import PersonItem from "../../../component/PersonItem/PersonItem";
+import ProgressBar from "../../../component/ProgressBar/ProgressBar";
 
 
 class Main extends Component{
@@ -47,7 +49,7 @@ class Main extends Component{
                             <React.Fragment>
                                 <div className={classes.first__line}>
                                     <div className={classes.inp__container}>
-                                        <img className={classes.img} src={loup} alt=""/>
+                                        <img className={classes.img} src={loup} alt="" />
                                         <input className={classes.search__field}
                                                type="text"
                                                value={this.state.searchValue}
@@ -63,8 +65,24 @@ class Main extends Component{
                                         <option value="">По описанию</option>
                                     </select>
                                 </div>
-                                <div >
 
+                                <div className={classes.pr__line}>
+                                    <ProgressBar/>
+                                    <div className={classes.pr__col}>
+                                        <div className={classes.inp__container}>
+                                            <img className={classes.img} src={place} alt=""/>
+                                            <input className={classes.adress__field}
+                                                   type="text"
+                                                   value={this.state.adress}
+                                                   onChange={e => this.state.setState({adress: e.target.value})}
+                                            />
+                                        </div>
+                                        <select className={classes.dropdown__menu}>
+                                            <option disabled value="">Сортировка</option>
+                                            <option value="">Образование</option>
+                                            <option value="">Опыт</option>
+                                        </select>
+                                    </div>
 
                                 </div>
                                 <div className={classes.list__block}>

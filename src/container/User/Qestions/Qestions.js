@@ -30,7 +30,7 @@ class Questions extends Component{
 
     componentDidMount(){
 
-        axios.get('/helpRequest/getList', {headers: {Authorization: localStorage.getItem('token')}})
+        axios.get('/helpRequest/getListMine', {headers: {Authorization: localStorage.getItem('token')}})
         .then((res) => {
             console.log(res);
             this.setState({info: res.data.helpRequests})

@@ -4,11 +4,13 @@ import Header from '../../../component/Header/Header'
 import preview from './help_preview.svg'
 import ListItem from "../../../component/ListItem/ListItem";
 import loup from './loup.svg'
+import axios from "../../../axios/axios";
 
 class Main extends Component{
     constructor(props){
         super(props)
         this.state = {
+            info : [],
             posts: [
                 {title: "Отбор волонтёров", adress: "Пр-кт Ленинский дом 56/2"},
                 {title: "Отбор волонтёров", adress: "Пр-кт Ленинский дом 56/2"},
@@ -25,9 +27,14 @@ class Main extends Component{
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({isLoaded: false})
-        }, 1000)
+        axios.get('/helpRequest/getList', {headers: {Authorization: localStorage.getItem('token')}})
+            .then((res) => {
+                console.log(res);
+                this.setState({info: res.data.helpRequests})
+                console.log(this.state.info)
+
+            })
+        this.setState({isLoaded: false})
     }
 
 
@@ -59,7 +66,7 @@ class Main extends Component{
 
 
                                     <select className={classes.dropdown__menu}>
-                                        <option disabled value="">Сортировка</option>
+                                        <option value="">Сортировка</option>
                                         <option value="">По названию</option>
                                         <option value="">По описанию</option>
                                     </select>
@@ -83,7 +90,7 @@ class Main extends Component{
                                 </div>
                                 <div className={classes.list__block}>
                                     {
-                                        this.state.posts.map((item) => <ListItem onClick={openMore} title={item.title} adress={item.adress}/>)
+                                        this.state.info.map((item) => <ListItem onClick={openMore} title={item.title} adress={item.adress}/>)
                                     }
                                 </div>
                             </React.Fragment>

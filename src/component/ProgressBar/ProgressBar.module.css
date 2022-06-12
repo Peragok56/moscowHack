@@ -1,0 +1,32 @@
+.main {
+    background-color: #D0EEFF;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+.row__values {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.age {
+    color: #2085BD;
+    font-size: 25px;
+    font-weight: bold;
+}
+.progress {
+
+    background-color: #2085BD;
+    background: #2085BD;
+    color: #2085BD;
+}

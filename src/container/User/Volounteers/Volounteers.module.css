@@ -39,14 +39,14 @@
 .first__line {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     margin: 10px;
 }
 
 .search__field {
-    width: 80%;
+    width: 100%;
     outline: none;
     border: none;
     background-color: #D0EEFF;
@@ -74,6 +74,7 @@
     padding: 6px 8px;
     padding-right: 0;
     margin-left: 20px;
+    width: 50%;
 
 }
 
@@ -180,5 +181,31 @@
     position: absolute;
     top: 5px;
     bottom: 5px;
-    left: 5px;
+    left: 15px;
+    z-index: 1000;
+}
+
+.pr__line {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pr__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.adress__field {
+    width: 350px;
+    outline: none;
+    border: none;
+    background-color: #D0EEFF;
+    border-radius: 40px;
+    padding: 12px 20px;
+    color: #2085BD;
+    padding-left: 50px;
+    font-size: 15px
 }
