@@ -38,7 +38,7 @@ class AdminSpecification extends Component{
         }
 
         let addSpec = () => {
-            let title = document.getElementById('nameSpec').value
+            let title = document.getElementById('nameOrganization').innerText
 
             axios.post('/specification/create', {name: title}, {headers: {Authorization: localStorage.getItem('token')}})
             .then((res) => {
@@ -63,7 +63,7 @@ class AdminSpecification extends Component{
                         {this.state.search === '' ?
                             this.state.specific.map((item) => 
                             <div className={classes.Card}>
-                                <h2>{item.name}</h2>
+                                <h2 id="nameOrganization">{item.name}</h2>
                                 <button onClick={() => removeSpec(item._id)}>Удалить</button>
                             </div>)
                              :
