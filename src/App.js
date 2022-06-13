@@ -65,6 +65,7 @@ class App extends Component{
               <Route path='/organizations' exact component={Organizations}/>
               <Route path='/organization' exact component={Organization}/>
 
+
               <Route path='/findtask' exact component={FindTask}/>
                 <Route path='/help' exact component={Help}/>
                 <Route path='/volounteers' exact component={Volounteers}/>

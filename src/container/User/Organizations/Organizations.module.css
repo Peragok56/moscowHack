@@ -223,3 +223,16 @@
     bottom: 5px;
     left: 5px;
 }
+.UpBlockWLink > a{
+    text-decoration: none;
+    color: white;
+    padding: 8px 32px;
+    background-color: rgb(32, 133, 189);
+    box-shadow: 0px 4px 39px 4px #71C0EC;
+    border-radius: 10px;
+    height: max-content;
+}
+.UpBlockWLink{
+    display: flex;
+    justify-content: space-between;
+}
