@@ -44,7 +44,7 @@ class Organizations extends Component{
                 <Header />
                 <div className={classes.bubble}/>
                 <div className={classes.profileContainer}>
-                    <h1>Организации</h1>
+                    <h1>Организаторы</h1>
 
                     <div className={classes.containerDown}>
                         {this.state.isLoaded?

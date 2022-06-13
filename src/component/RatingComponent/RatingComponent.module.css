@@ -5,11 +5,27 @@
     display: flex;
     flex-direction: row;
     margin: 15px;
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: .2s;
+}
+.main:hover {
+    opacity: .8;
 }
 .photo {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
+}
+.photo__img{
+    width: 150px;
+    height: 150px;
+    justify-self: center;
+    align-self: flex-start;
 }
 
 .info {
@@ -26,18 +42,21 @@
 }
 
 .info__name {
-    font-size: 30px;
-    color: #145071;
-    font-weight: bold;
-}
-.info__rating {
     font-size: 25px;
     color: #145071;
     font-weight: bold;
+    text-align: center;
+}
+.info__rating {
+    font-size: 20px;
+    color: #145071;
+    font-weight: bold;
+    text-align: center;
 }
 
 .info__adress {
-    font-size: 25px;
+    text-align: center;
+    font-size: 20px;
     color: #145071;
     font-weight: bold;
 }

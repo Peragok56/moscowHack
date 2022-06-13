@@ -89,7 +89,7 @@ class Main extends Component{
                                     <div className={classes.infoInp}>
                                         {this.state.recomendations.length === 0
                                             ?
-                                            <h1>Статей нету</h1>
+                                            <h1>Статей нет</h1>
                                             :
                                             <div className={classes.lists}>
                                                 <h2 className={classes.list__title}>Рекомендованные</h2>
