@@ -17,6 +17,7 @@ import Organization from './container/User/Organizate/Organizate';
 import AddTask from './container/User/AddTask/AddTask';
 import Questions from './container/User/Qestions/Qestions';
 import Volounteers from "./container/User/Volounteers/Volounteers";
+import MyRating from "./container/User/MyRating/MyRating";
 
 import AdminPanel from './container/Admin/AdminPanel/AdminPanel';
 import AdminSpecification from './container/Admin/AdminSpecification/AdminSpecification';
@@ -67,6 +68,7 @@ class App extends Component{
               <Route path='/findtask' exact component={FindTask}/>
                 <Route path='/help' exact component={Help}/>
                 <Route path='/volounteers' exact component={Volounteers}/>
+                <Route path='/myrating' exact component={MyRating}/>
               <Route path='/search' exact component={Search}/>
               <Route path='/main' exact component={Main}/>
               <Route path='/profile' exact component={Profile}/>

@@ -8,7 +8,7 @@ const PersonItem = () => {
     return (
         <div className={classes.main}>
             <div className={classes.photo}>
-                <img clas src={photo} alt="profile photo"/>
+                <img  src={photo} alt="profile photo"/>
             </div>
             <div className={classes.info}>
                 <div className={classes.info__name}><img className={classes.star} src={star} alt="star"/> Иван Иванович Иванов</div>

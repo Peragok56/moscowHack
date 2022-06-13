@@ -40,6 +40,7 @@ class Header extends Component{
                     <Link to={{pathname: '/volounteers'}} className={classes.Link}><span><img src={heart}/></span> <p>Волонтёры</p></Link>
                     <Link className={classes.Link} to={{pathname: '/organizations'}}><span><img src={organization}/></span> <p>Организаторы</p></Link>
                     <Link className={classes.Link} to={{pathname: '/questions'}}><span><img src={project}/></span> <p>Задания</p></Link>
+                    <Link className={classes.Link} to={{pathname: '/myrating'}}><span><img src={project}/></span> <p>Мой рейтинг</p></Link>
                     <Link className={classes.Link} to={{pathname: '/organization'}}><span><img src={king}/></span> <p>Стать организатором</p></Link>
                 </div>
             </div>
