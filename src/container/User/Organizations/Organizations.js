@@ -7,6 +7,7 @@ import axios from '../../../axios/axios'
 import loup from "../Volounteers/loup.svg";
 import PersonItem from "../../../component/PersonItem/PersonItem";
 import OrgsItem from "../../../component/OrgsItem/OrgsItem";
+import {Link} from "react-router-dom";
 
 
 class Organizations extends Component{
@@ -44,7 +45,10 @@ class Organizations extends Component{
                 <Header />
                 <div className={classes.bubble}/>
                 <div className={classes.profileContainer}>
-                    <h1>Организаторы</h1>
+                   
+                        <h1>Организаторы</h1>
+
+
 
                     <div className={classes.containerDown}>
                         {this.state.isLoaded?

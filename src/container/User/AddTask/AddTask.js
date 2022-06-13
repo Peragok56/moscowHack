@@ -61,7 +61,7 @@ class AddTask extends Component{
                 <div className={classes.Buble}>
                 </div>
                     <div className={classes.authForm}>
-                        <h1>Добавления задачи</h1>
+                        <h1>Добавление задачи</h1>
                         <form>
                             <input placeholder="Название" type='text' id="title"/>
                             <input placeholder="Описание" type='text' id="description"/>

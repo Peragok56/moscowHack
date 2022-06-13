@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: row;
     margin: 15px;
+    width: 650px;
 }
 .photo {
     display: flex;
@@ -43,6 +44,7 @@
 }
 
 .btn{
+    height: 70px;
     margin: 5px;
     border: none;
     cursor: pointer;
