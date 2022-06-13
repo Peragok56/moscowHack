@@ -3,6 +3,7 @@ import classes from './Help.module.css'
 import Header from '../../../component/Header/Header'
 import preview from './help_preview.svg'
 import ListItem from "../../../component/ListItem/ListItem";
+import axios from '../../../axios/axios';
 
 
 class Main extends Component{
@@ -15,14 +16,20 @@ class Main extends Component{
                 {title: "Пункт приёма крови", adress: "Пр-кт Ленинский дом 56/2"},
                 {title: "Пункт приёма крови", adress: "Пр-кт Ленинский дом 56/2"},
             ],
+            info:[],
             isLoaded: true,
         }
     }
 
     componentDidMount() {
-        setTimeout(() => {
+        console.log(this.props.location.state.id);
+        axios.get(`/helpRequest/getInfo?helpRequestId=${this.props.location.state.id}`, {headers: {Authorization: localStorage.getItem('token')}})
+        .then((res) => {
+            console.log(res);
+            this.setState({info: res.data.healpRequest})
             this.setState({isLoaded: false})
-        }, 1000)
+            
+        })
     }
 
 
@@ -50,7 +57,7 @@ class Main extends Component{
                                         </div>
                                         <div className={classes.info__title}>Описание</div>
                                         <div className={classes.info__block}>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            {this.props.location.state.description}
                                         </div>
                                         <div className={classes.btns}>
                                             <button className={classes.btn}>Написать</button>

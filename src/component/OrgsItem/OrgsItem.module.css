@@ -3,6 +3,7 @@
     border-radius: 10px;
     padding: 20px 30px;
     display: flex;
+    width: 85%;
     flex-direction: row;
     margin: 15px;
 }
@@ -17,6 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .star {
