@@ -75,6 +75,15 @@
     color: white;
 }
 
+.Delete{
+    padding: 8px 36px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
 .infoInp > textarea {
     border: none;
     outline: none;
@@ -227,11 +236,10 @@
     padding: 32px;
 
     width: 95%;
-    min-height: 600px;
+    min-height: 100vh;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     background-color: #2085BD;
-    margin-bottom: 20px;
 }
 
 .first__line {

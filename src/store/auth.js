@@ -18,6 +18,9 @@ export function auth(e, login, password) {
              localStorage.setItem('role', res2.data.account.role.name)
              localStorage.setItem('firstName', res2.data.account.firstName)
              localStorage.setItem('lastName', res2.data.account.lastName)
+             localStorage.setItem('organizationId', res2.data.organization._id)
+             localStorage.setItem('organizationName', res2.data.organization.title)
+             localStorage.setItem('organizationAddress', res2.data.organization.address)
              switch(res2.data.account.role.name){
                 case 'user':
                   window.location.pathname = '/main'

@@ -16,7 +16,7 @@ import thumbs from './thumbs.svg'
 class Header extends Component{
     render(){
 
-        const exit = () => {
+        let exit = () => {
             localStorage.clear()
             window.location.pathname = '/'
         }
@@ -24,10 +24,14 @@ class Header extends Component{
         return(
             <div className={classes.Header}>
                 <div className={classes.HeaderUp}>
-                    <Link style={{textDecoration: 'none'}} to='/profile'>
-                        <img src={avatar}/>
-                    </Link>
-                    <h1>{localStorage.getItem('firstName')} {localStorage.getItem('lastName')}</h1>
+                        <Link style={{textDecoration: 'none'}} to='/profile'>
+                            <img src={avatar}/>
+                        </Link>
+                    <div>
+                        <h1>{localStorage.getItem('firstName')} {localStorage.getItem('lastName')}</h1> 
+                        <h1>{localStorage.getItem('organizationName')}</h1>
+                    </div>
+                    <img src={Exit} style={{width: 35, cursor: 'pointer'}} onClick={exit}/>
                 </div>
             
                 <div className={classes.navLink}>

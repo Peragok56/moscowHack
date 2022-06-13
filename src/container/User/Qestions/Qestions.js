@@ -43,7 +43,22 @@ class Questions extends Component{
 
     render(){
 
-        
+        let Delete = (id) => {
+            axios.delete(`/helpRequest/remove?helpRequestId=${id}`, {headers: {Authorization: localStorage.getItem('token')}})
+            .then((res) => {
+                console.log(res);
+                axios.get('/helpRequest/getListMine', {headers: {Authorization: localStorage.getItem('token')}})
+                .then((res) => {
+                    console.log(res);
+                    this.setState({info: res.data.helpRequests})
+                    console.log(this.state.info)
+
+                })
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        }
 
         return(
             <div className={classes.App}>
@@ -62,8 +77,13 @@ class Questions extends Component{
                                 </div>
                                 <div className={classes.list__block}>
                                     {
-                                        this.state.info.map((item) => <ListItem  title={item.title} adress={item.address}/>)
-                                    }
+                                        this.state.info.map((item) => 
+                                        <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap', width: 325}}>
+                                            <ListItem  title={item.title} adress={item.address}/>
+                                            <button className={classes.Delete} onClick={() => Delete(item._id)}>Удалить</button>
+                                        </div>
+                                        
+                                    )}
                                 </div>
                             </React.Fragment>
                         }

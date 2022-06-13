@@ -22,6 +22,7 @@ import AdminPanel from './container/Admin/AdminPanel/AdminPanel';
 import AdminSpecification from './container/Admin/AdminSpecification/AdminSpecification';
 import AdminOrganization from "./container/Admin/AdminOrganization/AdminOrganization";
 import Organizations from './container/User/Organizations/Organizations';
+import AdminHelpRequest from './container/Admin/AdminHelpRequest/AdminHelpRequest';
 
 class App extends Component{
 
@@ -49,6 +50,7 @@ class App extends Component{
         case 'root':
           return (
             <Switch>
+                <Route path='/adminHelpRequest' exact component={AdminHelpRequest}/>
                 <Route path='/adminSpecification' exact component={AdminSpecification}/>
                 <Route path='/adminPanel' exact component={AdminPanel}/>
                 <Route path='/adminOrganization' exact component={AdminOrganization}/>
