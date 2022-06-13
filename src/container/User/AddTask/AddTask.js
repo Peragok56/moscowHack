@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {auth} from '../../../store/auth'
 import Vector from './Vector.svg'
 import axios from "../../../axios/axios";
+import Modal from "../../../component/Modal/Modal";
 
 
 class AddTask extends Component{
@@ -12,6 +13,7 @@ class AddTask extends Component{
         this.state = {
             specifications: [],
             select: [],
+            modalVisible: false,
         }
     }
 
@@ -54,6 +56,14 @@ class AddTask extends Component{
             })
 
         }
+        const showModal = () => {
+            this.setState({modalVisible: true});
+        }
+
+        const hide = (e) => {
+            e.preventDefault();
+            this.setState({modalVisible: false});
+        }
 
 
         return(
@@ -71,10 +81,20 @@ class AddTask extends Component{
                                 <input placeholder="От" type='date' id="dateFrom"/>
                                 <input placeholder="До" type='date' id='dateTo'/>
                             </div>
-                            <h1 style={{color: '#002279'}}>Направления: </h1>
-                                {this.state.specifications.map((item) => 
-                                    <h3 onClick={() => addSelect(item._id, item)} className='nameItem'>{item.name}</h3>
-                                )}   
+                            <h1 onClick={showModal} style={{color: '#002279', cursor: "pointer"}}> Добавить направления</h1>
+                            <Modal visible={this.state.modalVisible}>
+                                <div className={classes.main__modal}>
+                                    {this.state.specifications.map((item) =>
+                                        <h3 onClick={() => addSelect(item._id, item)} className={classes.li_it}>{item.name}</h3>
+                                    )}
+                                </div>
+                                <button className={classes.ready} onClick={hide}>Готово</button>
+
+                            </Modal>
+                            {this.state.select.map((item) =>
+                                <h3>{item.name}</h3>
+                            )}
+
                             <h1 style={{color: 'rgb(0, 34, 121)'}}>Тип задачи</h1>
                             <select id="select">
                                 <option value={true}>Онлайн</option>
