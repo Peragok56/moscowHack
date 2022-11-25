@@ -40,6 +40,7 @@ class Organization extends Component{
             axios.post('/organization/create', {title: title, isCommerical: select, address: addres, specifications: this.state.select}, {headers: {Authorization: localStorage.getItem('token')}})
             .then((res) => {
                 console.log(res);
+                window.location.pathname='/main'
             })
             .catch((err) => {
                 console.log(err);

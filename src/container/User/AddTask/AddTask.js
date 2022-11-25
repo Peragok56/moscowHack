@@ -50,6 +50,7 @@ class AddTask extends Component{
             {headers: {Authorization: localStorage.getItem('token')}})
             .then((res) => {
                 console.log(res);
+                window.location.pathname = '/main'
             })
             .catch((err) => {
                 console.log(err);
